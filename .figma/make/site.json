@@ -1,0 +1,10 @@
+{
+  "description": "Create stunning, production-ready portfolio websites with complete React code and pixel-perfect Figma designs tailored for developers and designers.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
