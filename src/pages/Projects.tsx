@@ -5,63 +5,71 @@ import SectionHeading from '../components/SectionHeading'
 
 const projects = [
   {
-    title: 'HiFix — Home Services Platform',
-    description: 'A full-stack marketplace connecting homeowners with verified service experts. Includes customer app, expert app, admin panel, and a high-performance Django backend.',
-    tags: ['React Native', 'Django', 'PostgreSQL', 'Firebase', 'AWS'],
+    title: 'HiFix Innovatives Website',
+    description: 'Responsive web portal for HiFix to showcase services, enable user onboarding, and drive traffic to mobile app installations. Implemented dynamic service listing, contact forms, and SEO optimization.',
+    tags: ['React', 'Django', 'PostgreSQL', 'SEO'],
     slug: 'hifix',
     status: 'Live',
-    category: 'Mobile + Web',
+    category: 'Web',
     featured: true,
   },
   {
-    title: 'Rotiwala — Food Delivery',
-    description: 'On-demand home-cooked food delivery app connecting local home chefs with customers. Real-time GPS tracking, Razorpay integration, and automated notifications.',
-    tags: ['React Native', 'Django', 'Google Maps', 'Razorpay'],
+    title: 'Rotiwala Food Delivery',
+    description: 'Complete food delivery platform offering homemade-style meals with order management, user authentication, secure online payment (Razorpay), and real-time order status updates.',
+    tags: ['React Native', 'Django', 'Razorpay', 'PostgreSQL'],
     slug: 'rotiwala',
     status: 'Live',
     category: 'Mobile',
   },
   {
     title: 'SP Consultancies',
-    description: 'Enterprise pharmaceutical engineering website for Sneha and Prahar Consultancy Services. Global-ready with multi-language SEO, fast load times, and premium editorial design.',
-    tags: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
+    description: 'Premium pharmaceutical engineering website for global visibility. Enterprise-grade SEO and performance optimization.',
+    tags: ['React', 'TypeScript', 'Tailwind CSS', 'SEO'],
     slug: 'spconsultancies',
     status: 'Live',
     category: 'Web',
     image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=400&fit=crop&auto=format',
   },
   {
-    title: 'HiFix Admin Panel',
-    description: 'A comprehensive React-based admin dashboard for managing service experts, customer orders, revenue analytics, and support tickets in real time.',
-    tags: ['React.js', 'TypeScript', 'Power BI', 'Django REST'],
-    slug: 'hifix-admin',
+    title: 'HiFix Customer App',
+    description: 'Mobile application for customers to book home services (cleaning, electricians, drivers). Features real-time booking, Razorpay payment gateway, Google Maps service tracking, and OTP login via AWS SNS.',
+    tags: ['React Native', 'Django', 'Razorpay', 'Google Maps', 'AWS SNS'],
+    slug: 'hifix-customer',
     status: 'Live',
-    category: 'Web',
+    category: 'Mobile',
   },
   {
-    title: 'HiFix Expert App',
-    description: 'Mobile application for service professionals to manage bookings, track earnings, update availability, and receive real-time job notifications.',
-    tags: ['React Native', 'Firebase', 'Google Maps', 'Django REST'],
+    title: 'HiFix Experts App',
+    description: 'Service-expert mobile app to manage bookings, update job status, and communicate with customers in real time. Integrated OTP-based login, live order updates, and Firebase push notifications with a Django REST API backend.',
+    tags: ['React Native', 'Django REST', 'Firebase', 'Google Maps'],
     slug: 'hifix-expert',
     status: 'Live',
     category: 'Mobile',
   },
   {
-    title: 'HiFix Customer App',
-    description: 'Customer-facing mobile app for booking home services, tracking experts in real time, and managing payment history across iOS-compatible Android builds.',
-    tags: ['React Native', 'Stripe', 'Razorpay', 'Firebase'],
-    slug: 'hifix-customer',
+    title: 'Jawar Community App',
+    description: 'Community service platform enabling users to connect with local service providers. Implemented user registration, service booking, and live notifications using Firebase and Django REST Framework.',
+    tags: ['React Native', 'Django REST', 'Firebase'],
+    slug: 'jawar',
     status: 'Live',
     category: 'Mobile',
   },
+  {
+    title: 'AutoBrez Website & Fitness App',
+    description: 'Developing Motors and curtain blinds website and Trekking & Fitness application featuring activity tracking, workout logging, step counting, and personalized fitness goal management.',
+    tags: ['React Native', 'Django', 'PostgreSQL'],
+    slug: 'autobrez',
+    status: 'In Progress',
+    category: 'Mobile + Web',
+  },
 ]
 
-const categories = ['All', 'Web', 'Mobile', 'Mobile + Web']
+const categories = ['All', 'Web', 'Mobile', 'Mobile + Web', 'In Progress']
 
 export default function Projects() {
   const [active, setActive] = useState('All')
 
-  const filtered = active === 'All' ? projects : projects.filter(p => p.category === active)
+  const filtered = active === 'All' ? projects : projects.filter(p => p.category === active || (active === 'In Progress' && p.status === 'In Progress'))
 
   return (
     <div style={{ background: '#fff', paddingTop: 80 }}>
@@ -120,7 +128,7 @@ export default function Projects() {
               </div>
               <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: 42, color: '#fff', margin: '0 0 16px', lineHeight: 1.1 }}>Sneha & Prahar<br />Consultancies</h3>
               <p style={{ fontFamily: 'var(--font-body)', fontSize: 16, color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, marginBottom: 28 }}>
-                Premium pharmaceutical engineering website serving international clients. Built with React + TypeScript + Tailwind CSS. Lighthouse performance score of 96. Fully responsive with enterprise-grade SEO.
+                Premium pharmaceutical engineering website serving international clients. Built with React + TypeScript + Tailwind CSS. Fully responsive with enterprise-grade SEO and performance optimization.
               </p>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 32 }}>
                 {['React', 'TypeScript', 'Tailwind CSS', 'SEO', 'Responsive', 'Vite'].map(tag => (

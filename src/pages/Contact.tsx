@@ -10,8 +10,8 @@ const contactMethods = [
       </svg>
     ),
     label: 'Email',
-    value: 'nagamani.gugulothu@gmail.com',
-    href: 'mailto:nagamani.gugulothu@gmail.com',
+    value: 'gugulothunagamani96@gmail.com',
+    href: 'mailto:gugulothunagamani96@gmail.com',
     description: 'Best way to reach me for project inquiries',
     color: '#5b5cf6',
   },
@@ -22,8 +22,8 @@ const contactMethods = [
       </svg>
     ),
     label: 'Phone',
-    value: '+91 98765 43210',
-    href: 'tel:+919876543210',
+    value: '+91 91214 81902',
+    href: 'tel:+919121481902',
     description: 'Available Mon–Sat, 9 AM – 7 PM IST',
     color: '#22c55e',
   },
@@ -34,8 +34,8 @@ const contactMethods = [
       </svg>
     ),
     label: 'LinkedIn',
-    value: 'linkedin.com/in/nagamani-gugulothu',
-    href: 'https://linkedin.com/in/nagamani-gugulothu',
+    value: 'linkedin.com/in/gugulothu-nagamani-203784285',
+    href: 'https://linkedin.com/in/gugulothu-nagamani-203784285',
     description: 'Connect for professional networking',
     color: '#0077b5',
   },

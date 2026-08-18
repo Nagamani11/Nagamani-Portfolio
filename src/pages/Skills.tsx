@@ -92,12 +92,12 @@ export default function Skills() {
             <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: 32, color: '#080808', marginBottom: 40 }}>Domain Expertise</h3>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '24px 60px' }}>
               {[
-                { label: 'Frontend Development', level: 93, description: 'React, TypeScript, Tailwind, responsive design' },
-                { label: 'Mobile Development', level: 88, description: 'React Native, Play Store deployment, offline UX' },
-                { label: 'Backend Engineering', level: 90, description: 'Django, REST APIs, authentication, integrations' },
-                { label: 'Database Design', level: 83, description: 'PostgreSQL, MySQL, Firebase, Redis caching' },
-                { label: 'Cloud & DevOps', label2: '', level: 72, description: 'AWS SNS, Docker, CI/CD pipelines' },
-                { label: 'API Integrations', level: 88, description: 'Payments, maps, notifications, third-party services' },
+                { label: 'Frontend Development', level: 92, description: 'React Native, HTML5, CSS3' },
+                { label: 'Backend Engineering', level: 90, description: 'Python, Django, Django REST Framework' },
+                { label: 'Database Management', level: 83, description: 'PostgreSQL, MySQL' },
+                { label: 'API Integrations', level: 88, description: 'Razorpay, Google Maps API' },
+                { label: 'Tools & DevOps', level: 82, description: 'GitHub, Power BI, PyLint, ESLint' },
+                { label: 'Cloud Services', level: 82, description: 'Firebase, GoDaddy Project Hosting' },
               ].map((item, i) => (
                 <div key={item.label}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>

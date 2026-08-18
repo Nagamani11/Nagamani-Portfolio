@@ -8,33 +8,33 @@ import SectionHeading from '../components/SectionHeading'
 import TechnologyCard from '../components/TechnologyCard'
 
 const stats = [
-  { value: 4, suffix: '+', label: 'Years Experience' },
-  { value: 10, suffix: '+', label: 'Projects Delivered' },
+  { value: 2, suffix: '+', label: 'Years Experience' },
+  { value: 5, suffix: '+', label: 'Projects Delivered' },
   { value: 3, suffix: '', label: 'Play Store Apps' },
   { value: 3, suffix: '', label: 'Live Websites' },
-  { value: 100, suffix: 'K+', label: 'Lines of Code' },
+  { value: 50, suffix: 'K+', label: 'Lines of Code' },
   { value: 99, suffix: '%', label: 'Delivery Rate' },
 ]
 
 const featuredProjects = [
   {
     title: 'HiFix Platform',
-    description: 'End-to-end home services marketplace with real-time expert booking, customer app, admin panel, and a Django backend serving 10K+ monthly bookings.',
-    tags: ['React Native', 'Django', 'PostgreSQL', 'AWS', 'Firebase'],
+    description: 'Multi-sided home services marketplace with customer app, expert app, and admin panel. Features real-time booking, Razorpay payments, and Google Maps tracking.',
+    tags: ['React Native', 'Django', 'PostgreSQL', 'Firebase', 'AWS'],
     slug: 'hifix',
     status: 'Live',
     featured: true,
   },
   {
     title: 'Rotiwala',
-    description: 'On-demand food delivery app connecting home chefs with customers. GPS-enabled tracking, Razorpay integration, real-time order management.',
-    tags: ['React Native', 'Django REST', 'Google Maps', 'Razorpay'],
+    description: 'Complete food delivery platform offering homemade-style meals with order management, user authentication, and Razorpay payments.',
+    tags: ['React Native', 'Django REST', 'Razorpay', 'PostgreSQL'],
     slug: 'rotiwala',
     status: 'Live',
   },
   {
     title: 'SP Consultancies',
-    description: 'Premium pharmaceutical engineering website for global visibility. Enterprise-grade SEO and performance optimization.',
+    description: 'Premium pharmaceutical engineering website for global visibility with enterprise-grade SEO and performance optimization.',
     tags: ['React', 'TypeScript', 'Tailwind CSS', 'SEO'],
     slug: 'spconsultancies',
     status: 'Live',
@@ -42,15 +42,15 @@ const featuredProjects = [
 ]
 
 const techHighlights = [
-  { name: 'React.js', icon: '⚛️', category: 'Frontend', color: '#61dafb' },
   { name: 'React Native', icon: '📱', category: 'Mobile', color: '#61dafb' },
-  { name: 'TypeScript', icon: '🔷', category: 'Language', color: '#3178c6' },
-  { name: 'Django', icon: '🐍', category: 'Backend', color: '#092e20' },
-  { name: 'PostgreSQL', icon: '🐘', category: 'Database', color: '#336791' },
-  { name: 'AWS', icon: '☁️', category: 'Cloud', color: '#ff9900' },
+  { name: 'Django', icon: '�', category: 'Backend', color: '#092e20' },
+  { name: 'PostgreSQL', icon: '�', category: 'Database', color: '#336791' },
+  { name: 'Razorpay', icon: '�', category: 'Integration', color: '#3395ff' },
+  { name: 'Firebase', icon: '�', category: 'Backend', color: '#ffca28' },
+  { name: 'Google Maps', icon: '🗺️', category: 'Integration', color: '#4285f4' },
 ]
 
-const roles = ['Full Stack Developer', 'React Native Developer', 'Django Developer', 'Mobile App Engineer']
+const roles = ['Full Stack Developer', 'React Native Developer', 'Django Developer']
 
 function RoleCycler() {
   const [index, setIndex] = useState(0)
@@ -148,7 +148,7 @@ export default function Home() {
             <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }} style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}>
               <div style={{ width: 420, height: 520, borderRadius: 32, background: 'linear-gradient(160deg, #f0f0ff 0%, #e8e8f8 50%, #f8f0ff 100%)', overflow: 'hidden', position: 'relative', border: '1px solid rgba(91,92,246,0.12)', boxShadow: '0 40px 80px rgba(91,92,246,0.12)' }}>
                 <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=840&h=1040&fit=crop&auto=format"
+                  src="/assets/Developer.jpeg"
                   alt="Gugulothu Nagamani - Senior Full Stack Developer"
                   style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }}
                 />
@@ -160,7 +160,7 @@ export default function Home() {
               </div>
 
               <motion.div animate={{ y: [0, -8, 0] }} transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }} style={{ position: 'absolute', top: 48, left: -20, background: 'rgba(255,255,255,0.95)', backdropFilter: 'blur(16px)', border: '1px solid rgba(0,0,0,0.08)', borderRadius: 20, padding: '18px 24px', boxShadow: '0 16px 48px rgba(0,0,0,0.1)', minWidth: 160 }}>
-                <div style={{ fontFamily: 'var(--font-heading)', fontSize: 36, color: '#080808', lineHeight: 1 }}>4+</div>
+                <div style={{ fontFamily: 'var(--font-heading)', fontSize: 36, color: '#080808', lineHeight: 1 }}>2+</div>
                 <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#737373', marginTop: 4 }}>Years Experience</div>
               </motion.div>
 

@@ -10,8 +10,8 @@ const values = [
 ]
 
 const highlights = [
-  { number: '4+', label: 'Years of professional experience' },
-  { number: '10+', label: 'Projects shipped across web and mobile' },
+  { number: '2+', label: 'Years of professional experience' },
+  { number: '5+', label: 'Projects shipped across web and mobile' },
   { number: '3', label: 'Apps live on Google Play Store' },
   { number: '3', label: 'Production websites currently live' },
 ]
@@ -25,12 +25,12 @@ export default function About() {
         <div style={{ maxWidth: 1440, margin: '0 auto' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 100, alignItems: 'center' }}>
             <div>
-              <SectionHeading label="About Me" title={"Crafting software<br /><em>with purpose</em>"} subtitle="I'm Gugulothu Nagamani — a Senior Full Stack Developer from Hyderabad, India, passionate about building software that makes a real difference." />
+              <SectionHeading label="About Me" title={"Crafting software<br /><em>with purpose</em>"} subtitle="I'm Gugulothu Nagamani — a Full Stack Developer from Hyderabad, India, passionate about building software that makes a real difference." />
               <p style={{ fontFamily: 'var(--font-body)', fontSize: 16, color: '#555', lineHeight: 1.8, marginBottom: 20 }}>
-                With over 4 years of professional experience spanning React.js, React Native, Django, and cloud infrastructure, I specialize in building end-to-end digital products that scale. My journey started with a B.Tech in Computer Science from JNTU Hyderabad, and since then I've shipped everything from real-time booking platforms to pharmaceutical engineering websites.
+                With 2 years of professional experience spanning React Native, Django, and PostgreSQL, I specialize in building end-to-end digital products that scale. My journey started with a B.Tech in Computer Science from JNTU Hyderabad, and since then I've shipped everything from real-time booking platforms to pharmaceutical engineering websites.
               </p>
               <p style={{ fontFamily: 'var(--font-body)', fontSize: 16, color: '#555', lineHeight: 1.8, marginBottom: 32 }}>
-                Currently working as a Full Stack Developer at HiFix Innovatives, I architect and maintain a multi-sided marketplace serving thousands of users across India. My work touches React Native apps on the Play Store, a Django REST backend handling live bookings, and a React admin dashboard for operations teams.
+                Currently working as a Full Stack Developer at AutoBrez, I'm developing the company website and a Trekking & Fitness application. Previously at HiFix Innovatives, I architected and built a multi-sided marketplace serving thousands of users across India, including React Native apps on the Play Store and a Django REST backend.
               </p>
               <div style={{ display: 'flex', gap: 16 }}>
                 <Link to="/experience" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 15, color: '#fff', background: '#080808', padding: '12px 26px', borderRadius: 12, textDecoration: 'none', transition: 'all 0.2s' }}
@@ -52,8 +52,8 @@ export default function About() {
             <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }} style={{ position: 'relative' }}>
               <div style={{ borderRadius: 28, overflow: 'hidden', height: 540, background: '#f0f0f8', boxShadow: '0 32px 80px rgba(91,92,246,0.12)' }}>
                 <img
-                  src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=700&h=1080&fit=crop&auto=format"
-                  alt="Developer working"
+                  src="/assets/Developer.jpeg"
+                  alt="Gugulothu Nagamani - Full Stack Developer"
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
               </div>
@@ -136,10 +136,10 @@ export default function About() {
                   { label: 'Full Name', value: 'Gugulothu Nagamani' },
                   { label: 'Location', value: 'Hyderabad, Telangana, India' },
                   { label: 'Education', value: 'B.Tech, JNTU Hyderabad (CGPA: 7.5)' },
-                  { label: 'Experience', value: '4+ years in Full Stack Development' },
-                  { label: 'Specialization', value: 'React, React Native, Django' },
+                  { label: 'Experience', value: '2+ years in Full Stack Development' },
+                  { label: 'Specialization', value: 'React Native, Django, PostgreSQL' },
                   { label: 'Languages', value: 'Telugu (Native), English (Professional), Hindi (Conversational)' },
-                  { label: 'Interests', value: 'Open Source, Mobile UX, System Design, Cricket' },
+                  { label: 'Interests', value: 'Listening to Music, Gardening, Exploring New Technologies' },
                 ].map(item => (
                   <div key={item.label} style={{ display: 'flex', gap: 24, padding: '16px 0', borderBottom: '1px solid rgba(0,0,0,0.06)' }}>
                     <div style={{ fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 13, color: '#aaa', textTransform: 'uppercase', letterSpacing: '0.07em', minWidth: 140 }}>{item.label}</div>
@@ -152,10 +152,10 @@ export default function About() {
               <SectionHeading label="Journey" title={"How I got<br /><em>here</em>"} />
               <div style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
                 {[
-                  { year: '2015–2019', title: 'B.Tech in Computer Science', detail: 'Studied at JNTU Hyderabad. Discovered a passion for web development and built my first full-stack applications during final year.' },
-                  { year: '2019–2020', title: 'Internship & Training', detail: 'Completed professional training in Python and Django. Worked on real client projects as an intern, learning production-grade coding practices.' },
-                  { year: '2020–2021', title: 'First Commercial Projects', detail: 'Delivered first freelance projects — a food delivery platform and a local business directory. Moved into React Native for mobile development.' },
-                  { year: '2021–Present', title: 'HiFix Innovatives', detail: 'Joined as a Full Stack Developer. Architected and built the entire HiFix ecosystem: customer app, expert app, admin panel, and Django API.' },
+                  { year: '2020–2024', title: 'B.Tech in Computer Science', detail: 'Studied at JNTU Hyderabad (GDMM College). Discovered a passion for web development and built my first full-stack applications during final year.' },
+                  { year: '2024', title: 'AI Certification & Internship', detail: 'Completed Certification in Artificial Intelligence at BIST Technologies Pvt. Ltd., Vijayawada. Gained hands-on experience with AI/ML concepts.' },
+                  { year: '2024–Feb 2025', title: 'HiFix Innovatives', detail: 'Worked as Full Stack Developer. Built 3 Android apps published on Google Play Store and 2 live production websites (hifix.in and rotiwala.org).' },
+                  { year: 'May 2026–Present', title: 'AutoBrez', detail: 'Currently working as Full Stack Developer. Developing company website and Trekking & Fitness application with activity tracking and personalized fitness goals.' },
                 ].map((item, i) => (
                   <motion.div key={i} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
                     style={{ display: 'flex', gap: 20 }}

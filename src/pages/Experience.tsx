@@ -15,53 +15,48 @@ export default function Experience() {
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
             <ExperienceCard
-              company="HiFix Innovatives"
-              role="Senior Full Stack Developer"
-              period="Jan 2021 – Present · 4 years"
+              company="AutoBrez"
+              role="Full Stack Developer"
+              period="May 2026 – Present"
               location="Hyderabad, Telangana, India"
               current={true}
               description={[
-                "Architected and developed the complete HiFix platform — a multi-sided marketplace connecting homeowners with verified service experts across Hyderabad and Bangalore.",
-                "Built three React Native mobile applications (Customer App, Expert App, Admin App) deployed to the Google Play Store with 10K+ combined downloads.",
-                "Designed and implemented a Django REST Framework backend serving 50K+ monthly API requests with 99.8% uptime, backed by PostgreSQL and Redis.",
-                "Integrated Firebase for real-time notifications, Google Maps Platform for location tracking, and Razorpay for seamless payment processing.",
-                "Implemented AWS SNS for push notifications and set up a CI/CD pipeline for automated deployments, reducing deployment time by 70%.",
-                "Led a team of 3 junior developers, conducting code reviews, setting technical standards, and mentoring on React Native and Django best practices.",
-                "Designed and maintained the Power BI analytics dashboard used by the operations team to monitor expert performance and customer satisfaction.",
-                "Reduced app load time by 40% through code splitting, image optimization, and API response caching strategies.",
+                "Developing and maintaining the AutoBrez company website, ensuring responsive design and optimal performance across devices.",
+                "Developing a Trekking & Fitness application featuring activity tracking, workout logging, step counting, and personalized fitness goal management using React Native and Django.",
+                "Implementing clean, scalable RESTful APIs using Django REST Framework, with PostgreSQL as the primary data store.",
               ]}
-              technologies={['React Native', 'React.js', 'Django', 'Django REST Framework', 'PostgreSQL', 'Firebase', 'AWS SNS', 'Redis', 'Google Maps', 'Razorpay', 'Stripe', 'Power BI', 'Docker', 'TypeScript']}
+              technologies={['React Native', 'Django', 'Django REST Framework', 'PostgreSQL', 'React.js', 'HTML5', 'CSS3']}
               delay={0}
             />
 
             <ExperienceCard
-              company="Freelance"
+              company="HiFix Innovatives"
               role="Full Stack Developer"
-              period="Jun 2020 – Dec 2020 · 7 months"
-              location="Remote, India"
+              period="2024 – February 2025"
+              location="Hyderabad, Telangana, India"
               description={[
-                "Designed and developed Rotiwala, an on-demand home-cooked food delivery platform connecting home chefs with nearby customers.",
-                "Built complete mobile app in React Native with real-time order tracking using Google Maps Platform and Socket.IO.",
-                "Integrated Razorpay payment gateway with support for UPI, debit/credit cards, and net banking.",
-                "Developed Django REST API with PostgreSQL backend handling order management, real-time driver tracking, and automated SMS notifications.",
-                "Delivered the entire project end-to-end within a 3-month timeline with zero critical bugs at launch.",
+                "Contributed to the complete software lifecycle of multiple live applications under the HiFix brand web platforms and Android apps.",
+                "Architected and developed 3 Android apps published live on Google Play Store: HiFix Partner, HiFix Experts, and Jawar.",
+                "Built 2 live production websites: hifix.in (service marketplace) and rotiwala.org (food delivery platform).",
+                "Integrated Stripe/Razorpay payment gateways, Google Maps service tracking, OTP authentication via AWS SNS, and Firebase push notifications.",
+                "Developed full-featured Django REST API backends with role-based access control for customer, expert, and admin portals.",
+                "Maintained code quality using PyLint and ESLint; managed source control and CI workflows on GitHub.",
               ]}
-              technologies={['React Native', 'Django', 'PostgreSQL', 'Google Maps API', 'Razorpay', 'Socket.IO', 'Firebase', 'Android Studio']}
+              technologies={['React Native', 'Django', 'Django REST Framework', 'PostgreSQL', 'MySQL', 'Razorpay', 'Stripe', 'Google Maps API', 'Firebase', 'AWS SNS', 'PyLint', 'ESLint', 'GitHub']}
               delay={0.1}
             />
 
             <ExperienceCard
-              company="Internship"
-              role="Python Django Developer Intern"
-              period="Jan 2020 – May 2020 · 5 months"
-              location="Hyderabad, Telangana, India"
+              company="BIST Technologies Pvt. Ltd."
+              role="AI Intern"
+              period="2024"
+              location="Vijayawada, India"
               description={[
-                "Completed intensive training in Python, Django, and REST API development under senior developer mentorship.",
-                "Built CRUD REST APIs for an internal HR management system using Django REST Framework and PostgreSQL.",
-                "Developed custom Django admin interfaces for content management and data reporting.",
-                "Learned version control workflows using Git and GitHub, contributing to a shared codebase with 5+ developers.",
+                "Completed Certification in Artificial Intelligence training program.",
+                "Gained hands-on experience with AI/ML concepts and practical implementations.",
+                "Worked on real-world AI projects during internship period.",
               ]}
-              technologies={['Python', 'Django', 'PostgreSQL', 'Git', 'GitHub', 'Linux', 'VS Code']}
+              technologies={['Python', 'Machine Learning', 'AI', 'Data Science']}
               delay={0.2}
             />
           </div>
