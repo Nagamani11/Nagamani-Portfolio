@@ -60,7 +60,7 @@ const contactMethods = [
     label: 'Resume',
     value: 'Download my resume (PDF)',
     href: '#',
-    description: 'Updated July 2024',
+    description: 'Updated August 2026',
     color: '#f59e0b',
   },
   {

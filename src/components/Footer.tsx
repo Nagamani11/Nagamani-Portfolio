@@ -19,7 +19,7 @@ const footerLinks = [
 const socials = [
   {
     name: 'LinkedIn',
-    href: 'https://linkedin.com',
+    href: 'https://linkedin.com/in/gugulothu-nagamani-203784285',
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
         <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/>
@@ -29,7 +29,7 @@ const socials = [
   },
   {
     name: 'GitHub',
-    href: 'https://github.com',
+    href: 'https://github.com/nagamanigugulothu',
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
         <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
@@ -38,7 +38,7 @@ const socials = [
   },
   {
     name: 'Email',
-    href: 'mailto:nagamani.gugulothu@gmail.com',
+    href: 'mailto:gugulothunagamani96@gmail.com',
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
@@ -65,7 +65,7 @@ export default function Footer() {
               </div>
               <div>
                 <div style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 15, color: '#080808' }}>Gugulothu Nagamani</div>
-                <div style={{ fontFamily: 'var(--font-body)', fontWeight: 400, fontSize: 12, color: '#737373' }}>Senior Full Stack Developer</div>
+                <div style={{ fontFamily: 'var(--font-body)', fontWeight: 400, fontSize: 12, color: '#737373' }}>Full Stack Developer</div>
               </div>
             </Link>
             <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#737373', lineHeight: 1.7, maxWidth: 240 }}>
@@ -122,8 +122,8 @@ export default function Footer() {
             <div style={{ fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 12, color: '#737373', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 20 }}>Get in Touch</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
               {[
-                { label: 'Email', value: 'nagamani.gugulothu@gmail.com' },
-                { label: 'Phone', value: '+91 9876543210' },
+                { label: 'Email', value: 'gugulothunagamani96@gmail.com' },
+                { label: 'Phone', value: '+91 91214 81902' },
                 { label: 'Location', value: 'Hyderabad, Telangana, India' },
               ].map(item => (
                 <div key={item.label}>
@@ -138,10 +138,10 @@ export default function Footer() {
         {/* Bottom bar */}
         <div style={{ borderTop: '1px solid rgba(0,0,0,0.07)', paddingTop: 28, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <p style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#aaa', margin: 0 }}>
-            © 2024 Gugulothu Nagamani. Crafted with precision in Hyderabad.
+            © 2026 Gugulothu Nagamani. Crafted with precision in Hyderabad.
           </p>
           <p style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#aaa', margin: 0 }}>
-            React · TypeScript · Tailwind CSS
+            React Native · Django · PostgreSQL
           </p>
         </div>
       </div>

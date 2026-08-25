@@ -31,7 +31,7 @@ const achievements = [
     icon: '📊',
     title: '99.8% API Uptime',
     subtitle: 'HiFix Django Backend',
-    description: "Maintained 99.8% uptime on the HiFix production API across 18+ months, handling 50,000+ monthly requests with zero data loss incidents during that period.",
+    description: "Maintained 99.8% uptime on the HiFix production API, handling 50,000+ monthly requests with zero data loss incidents across the platform's lifetime.",
     impact: '99.8% uptime',
     color: '#06b6d4',
   },
@@ -42,30 +42,6 @@ const achievements = [
     description: 'The Razorpay and Stripe integrations I built have processed over ₹10 lakhs in transactions across the HiFix platform with a payment success rate exceeding 98%.',
     impact: '98% success rate',
     color: '#3395ff',
-  },
-  {
-    icon: '👥',
-    title: 'Team Leadership',
-    subtitle: 'Led 3-person Dev Team',
-    description: 'Successfully led a team of 3 junior developers at HiFix Innovatives. Established code review processes, Git workflows, and documentation standards still in use today.',
-    impact: '3 devs mentored',
-    color: '#a78bfa',
-  },
-  {
-    icon: '⏱️',
-    title: '70% Faster Deployments',
-    subtitle: 'CI/CD Pipeline Implementation',
-    description: 'Designed and implemented an automated CI/CD pipeline for the HiFix platform using GitHub Actions and Docker, reducing average deployment time from 45 minutes to 12 minutes.',
-    impact: '70% time saved',
-    color: '#f97316',
-  },
-  {
-    icon: '🎓',
-    title: 'NPTEL Elite + Silver',
-    subtitle: 'AI & ML Certification',
-    description: 'Earned the Elite + Silver badge from NPTEL/IIT Madras for the Artificial Intelligence and Machine Learning course — awarded to the top 5% of participants nationally.',
-    impact: 'Top 5% nationally',
-    color: '#ec4899',
   },
 ]
 
@@ -101,7 +77,7 @@ export default function Achievements() {
           </div>
 
           {/* Achievement cards */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 20 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
             {achievements.map((a, i) => (
               <motion.div
                 key={a.title}

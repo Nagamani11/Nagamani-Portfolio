@@ -126,13 +126,13 @@ export default function Home() {
                   onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.background = '#080808'; el.style.transform = 'translateY(0)'; el.style.boxShadow = 'none' }}
                 >
                   Explore Projects
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
                 </Link>
                 <a href="#" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 15, color: '#080808', background: 'transparent', padding: '12px 28px', borderRadius: 14, textDecoration: 'none', border: '1.5px solid rgba(0,0,0,0.14)', transition: 'all 0.25s ease' }}
                   onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = 'rgba(0,0,0,0.3)'; el.style.background = 'rgba(0,0,0,0.03)' }}
                   onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = 'rgba(0,0,0,0.14)'; el.style.background = 'transparent' }}
                 >
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" y1="15" x2="12" y2="3" /></svg>
                   Download Resume
                 </a>
                 <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 15, color: '#5b5cf6', background: 'rgba(91,92,246,0.08)', padding: '12px 24px', borderRadius: 14, textDecoration: 'none', border: '1.5px solid rgba(91,92,246,0.15)', transition: 'all 0.25s ease' }}
@@ -148,14 +148,14 @@ export default function Home() {
             <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }} style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}>
               <div style={{ width: 420, height: 520, borderRadius: 32, background: 'linear-gradient(160deg, #f0f0ff 0%, #e8e8f8 50%, #f8f0ff 100%)', overflow: 'hidden', position: 'relative', border: '1px solid rgba(91,92,246,0.12)', boxShadow: '0 40px 80px rgba(91,92,246,0.12)' }}>
                 <img
-                  src="/assets/Developer.jpeg"
+                  src="/assets/Developer.png"
                   alt="Gugulothu Nagamani - Senior Full Stack Developer"
                   style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }}
                 />
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(8,8,8,0.4) 0%, transparent 50%)' }} />
                 <div style={{ position: 'absolute', bottom: 24, left: 24, right: 24, background: 'rgba(255,255,255,0.9)', backdropFilter: 'blur(16px)', borderRadius: 16, padding: '16px 20px', border: '1px solid rgba(255,255,255,0.6)' }}>
                   <div style={{ fontFamily: 'var(--font-heading)', fontSize: 18, color: '#080808' }}>Gugulothu Nagamani</div>
-                  <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#737373', marginTop: 2 }}>Senior Full Stack Developer · Hyderabad</div>
+                  <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#737373', marginTop: 2 }}>Full Stack Developer · Hyderabad</div>
                 </div>
               </div>
 
