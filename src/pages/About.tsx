@@ -61,7 +61,7 @@ export default function About() {
             <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }} style={{ position: 'relative', zIndex: 1 }}>
               <div style={{ borderRadius: 32, overflow: 'hidden', height: 540, background: 'var(--bg-elevated)', border: '1px solid var(--border)', boxShadow: '0 32px 80px rgba(0,0,0,0.6)' }}>
                 <img
-                  src="/assets/Developer.png"
+                  src="/Nagamani-Portfolio/assets/Developer.png"
                   alt="Gugulothu Nagamani - Full Stack Developer"
                   style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }}
                 />
