@@ -6,6 +6,7 @@ import FloatingBackground from '../components/FloatingBackground'
 import ProjectCard from '../components/ProjectCard'
 import SectionHeading from '../components/SectionHeading'
 import TechnologyCard from '../components/TechnologyCard'
+import developerImage from '/assets/Developer.png'
 
 const stats = [
   { value: 2, suffix: '+', label: 'Years Experience' },
@@ -324,7 +325,7 @@ export default function Home() {
                 boxShadow: '0 40px 80px rgba(0,0,0,0.5)',
               }}>
                 <img
-                  src={`${import.meta.env.BASE_URL}assets/Developer.png`}
+                  src={developerImage}
                   alt="Gugulothu Nagamani - Full Stack Developer"
                   style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }}
                 />
