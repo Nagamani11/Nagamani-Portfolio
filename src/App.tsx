@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useLocation, useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
 import { AnimatePresence } from 'framer-motion'
 import Navbar from './components/Navbar'
@@ -28,10 +28,23 @@ function ScrollToTop() {
   return null
 }
 
+function HandleRedirect() {
+  const navigate = useNavigate()
+  useEffect(() => {
+    const redirectPath = sessionStorage.getItem('redirect')
+    if (redirectPath) {
+      sessionStorage.removeItem('redirect')
+      navigate(redirectPath)
+    }
+  }, [navigate])
+  return null
+}
+
 function AppRoutes() {
   const location = useLocation()
   return (
     <>
+      <HandleRedirect />
       <ScrollToTop />
       <Navbar />
       <AnimatePresence mode="wait">

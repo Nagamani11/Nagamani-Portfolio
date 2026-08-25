@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Single Page App</title>
+  <script>
+    // Redirect to the main app and let React Router handle the routing
+    // Get the current path (remove the base path if present)
+    var path = window.location.pathname;
+    var basePath = '/Nagamani-Portfolio';
+    
+    // Remove base path from the current path
+    if (path.startsWith(basePath)) {
+      path = path.substring(basePath.length);
+    }
+    
+    // Store the intended path and redirect to index
+    sessionStorage.setItem('redirect', path + window.location.search);
+    window.location.href = basePath + '/';
+  </script>
+</head>
+<body>
+</body>
+</html>
