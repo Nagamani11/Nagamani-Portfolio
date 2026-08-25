@@ -2,7 +2,6 @@ import { defineConfig, type HtmlTagDescriptor, type Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import path from 'node:path'
-import fs from 'node:fs'
 
 import siteConfiguration from './.figma/make/site.json'
 
@@ -12,7 +11,7 @@ export default defineConfig(({ mode }) => {
   const emitSourcemaps = mode === 'development'
 
   return {
-    base: '/Nagamani-Portfolio/',
+    base: process.env.FIGMA_PUBLIC_URL ? `${process.env.FIGMA_PUBLIC_URL}/` : '/Nagamani-Portfolio/',
     build: {
       sourcemap: emitSourcemaps ? 'inline' : false,
       minify: !emitSourcemaps,
@@ -20,7 +19,6 @@ export default defineConfig(({ mode }) => {
     plugins: [
       react(),
       tailwindcss(),
-      copy404Html(),
       figmaSiteConfiguration(siteConfiguration),
       figmaErrorOverlayReplay(),
       figmaReactRefreshBoundaryFallback(),
@@ -293,24 +291,6 @@ function figmaReactRefreshBoundaryFallback(): Plugin {
       }
 
       return null
-    },
-  }
-}
-
-/**
- * Copies 404.html to the dist folder for GitHub Pages SPA routing.
- * This enables client-side routing to work when users refresh the page.
- */
-function copy404Html(): Plugin {
-  return {
-    name: 'copy-404-html',
-    generateBundle() {
-      const fortyFourContent = fs.readFileSync('./404.html', 'utf-8')
-      this.emitFile({
-        type: 'asset',
-        fileName: '404.html',
-        source: fortyFourContent,
-      })
     },
   }
 }
