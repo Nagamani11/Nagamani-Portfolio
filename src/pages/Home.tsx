@@ -6,7 +6,7 @@ import FloatingBackground from '../components/FloatingBackground'
 import ProjectCard from '../components/ProjectCard'
 import SectionHeading from '../components/SectionHeading'
 import TechnologyCard from '../components/TechnologyCard'
-import developerImage from '/assets/Developer.png'
+import developerImage from '../assets/Developer.png'
 
 const stats = [
   { value: 2, suffix: '+', label: 'Years Experience' },

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import SectionHeading from '../components/SectionHeading'
-import developerImage from '/assets/Developer.png'
+import developerImage from '../assets/Developer.png'
 
 const values = [
   { title: 'User-Centric', description: 'Building products that prioritize the end-user experience above all else.', icon: '🎯' },
