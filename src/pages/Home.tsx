@@ -324,7 +324,7 @@ export default function Home() {
                 boxShadow: '0 40px 80px rgba(0,0,0,0.5)',
               }}>
                 <img
-                  src="/Nagamani-Portfolio/assets/Developer.png"
+                  src={`${import.meta.env.BASE_URL}assets/Developer.png`}
                   alt="Gugulothu Nagamani - Full Stack Developer"
                   style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }}
                 />
