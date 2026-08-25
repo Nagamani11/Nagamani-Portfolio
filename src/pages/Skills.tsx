@@ -1,96 +1,82 @@
 import { useState } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
-import SkillCard from '../components/SkillCard'
+import { motion, AnimatePresence } from 'framer-motion'
 import SectionHeading from '../components/SectionHeading'
+import SkillCard from '../components/SkillCard'
 
-const allSkills = [
-  { name: 'React.js', level: 95, category: 'Frontend', icon: '⚛️' },
-  { name: 'TypeScript', level: 90, category: 'Frontend', icon: '🔷' },
-  { name: 'JavaScript', level: 95, category: 'Frontend', icon: '🟨' },
-  { name: 'Tailwind CSS', level: 92, category: 'Frontend', icon: '💨' },
-  { name: 'HTML5 / CSS3', level: 96, category: 'Frontend', icon: '🌐' },
-  { name: 'Redux / Context', level: 85, category: 'Frontend', icon: '🔄' },
-  { name: 'React Native', level: 90, category: 'Mobile', icon: '📱' },
-  { name: 'Android Studio', level: 78, category: 'Mobile', icon: '🤖' },
-  { name: 'Expo', level: 82, category: 'Mobile', icon: '📦' },
-  { name: 'Python', level: 88, category: 'Backend', icon: '🐍' },
-  { name: 'Django', level: 90, category: 'Backend', icon: '🎯' },
-  { name: 'Django REST', level: 92, category: 'Backend', icon: '🔌' },
+const skillCategories = ['All', 'Frontend', 'Backend', 'Database', 'Tools'] as const
+type Category = typeof skillCategories[number]
+
+const skills = [
+  { name: 'React Native (CLI)', level: 92, category: 'Frontend', icon: '📱' },
+  { name: 'React.js', level: 90, category: 'Frontend', icon: '⚛️' },
+  { name: 'HTML5 & CSS3', level: 85, category: 'Frontend', icon: '🎨' },
+  { name: 'Python', level: 90, category: 'Backend', icon: '🐍' },
+  { name: 'Django', level: 92, category: 'Backend', icon: '🎯' },
+  { name: 'Django REST Framework', level: 88, category: 'Backend', icon: '🔌' },
   { name: 'PostgreSQL', level: 85, category: 'Database', icon: '🐘' },
-  { name: 'MySQL', level: 80, category: 'Database', icon: '🗄️' },
-  { name: 'Firebase', level: 82, category: 'Database', icon: '🔥' },
-  { name: 'Redis', level: 72, category: 'Database', icon: '⚡' },
-  { name: 'AWS SNS', level: 75, category: 'Cloud', icon: '☁️' },
-  { name: 'Docker', level: 70, category: 'Cloud', icon: '🐳' },
-  { name: 'Razorpay', level: 88, category: 'APIs', icon: '💳' },
-  { name: 'Stripe', level: 78, category: 'APIs', icon: '💰' },
-  { name: 'Google Maps', level: 85, category: 'APIs', icon: '🗺️' },
-  { name: 'REST APIs', level: 95, category: 'APIs', icon: '🔗' },
-  { name: 'Git / GitHub', level: 92, category: 'Tools', icon: '🐙' },
-  { name: 'VS Code', level: 96, category: 'Tools', icon: '💻' },
-  { name: 'Postman', level: 90, category: 'Tools', icon: '📬' },
-  { name: 'Power BI', level: 72, category: 'Tools', icon: '📊' },
-  { name: 'Figma', level: 68, category: 'Design', icon: '🎨' },
-  { name: 'UI/UX Design', level: 70, category: 'Design', icon: '✨' },
+  { name: 'MySQL', level: 80, category: 'Database', icon: '🐬' },
+  { name: 'Git & GitHub', level: 85, category: 'Tools', icon: '📦' },
+  { name: 'Power BI', level: 75, category: 'Tools', icon: '📊' },
 ]
 
-const categories = ['All', 'Frontend', 'Mobile', 'Backend', 'Database', 'Cloud', 'APIs', 'Tools', 'Design']
-
 export default function Skills() {
-  const [active, setActive] = useState('All')
-  const filtered = active === 'All' ? allSkills : allSkills.filter(s => s.category === active)
+  const [activeTab, setActiveTab] = useState<Category>('All')
+
+  const filteredSkills = activeTab === 'All' 
+    ? skills 
+    : skills.filter(s => s.category === activeTab)
 
   return (
-    <div style={{ background: '#fff', paddingTop: 80 }}>
-      <section style={{ padding: '80px 40px 120px' }}>
-        <div style={{ maxWidth: 1440, margin: '0 auto' }}>
-          <SectionHeading
-            label="Skills"
-            title={"Technical<br /><em>Proficiency</em>"}
-            subtitle="A comprehensive view of my skills across frontend, backend, mobile, and cloud."
-          />
+    <div style={{ paddingTop: 100, paddingBottom: 100, background: 'var(--bg)' }}>
+      <div style={{ maxWidth: 1440, margin: '0 auto', padding: '0 40px' }}>
+        <SectionHeading label="Skills" title={"Technical<br /><em>Proficiency</em>"} subtitle="My toolkit for building modern, scalable, and high-performance digital solutions." />
+        
+        {/* Category Tabs */}
+        <motion.div 
+          initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }}
+          style={{ display: 'flex', gap: 12, marginBottom: 48, flexWrap: 'wrap' }}
+        >
+          {skillCategories.map(cat => (
+            <button
+              key={cat}
+              onClick={() => setActiveTab(cat)}
+              style={{
+                fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 14,
+                padding: '10px 24px', borderRadius: 99, border: 'none', cursor: 'pointer',
+                transition: 'all 0.25s ease',
+                background: activeTab === cat ? 'var(--accent)' : 'var(--bg-elevated)',
+                color: activeTab === cat ? '#fff' : 'var(--text-secondary)',
+                boxShadow: activeTab === cat ? 'var(--glow-accent)' : 'inset 0 0 0 1px var(--border)',
+              }}
+            >
+              {cat}
+            </button>
+          ))}
+        </motion.div>
 
-          {/* Category filter */}
-          <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 56 }}>
-            {categories.map(cat => (
-              <button
-                key={cat}
-                onClick={() => setActive(cat)}
-                style={{
-                  fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 13,
-                  padding: '8px 20px', borderRadius: 99, border: 'none', cursor: 'pointer',
-                  transition: 'all 0.2s ease',
-                  background: active === cat ? '#080808' : 'rgba(0,0,0,0.05)',
-                  color: active === cat ? '#fff' : '#737373',
-                }}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
-
+        {/* Skills Grid */}
+        <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr', gap: 60 }}>
+          
+          {/* Left: Dynamic Grid */}
           <AnimatePresence mode="wait">
             <motion.div
-              key={active}
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -12 }}
-              transition={{ duration: 0.3 }}
-              style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 20 }}
+              key={activeTab}
+              initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.3 }}
+              style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 24, alignContent: 'start' }}
             >
-              {filtered.map((s, i) => (
-                <SkillCard key={s.name} {...s} delay={i * 0.04} />
+              {filteredSkills.map((s, i) => (
+                <SkillCard key={s.name} {...s} delay={i * 0.05} />
               ))}
             </motion.div>
           </AnimatePresence>
 
-          {/* Summary radar alternative: category summary bars */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}
-            style={{ marginTop: 80, background: '#fafafa', borderRadius: 28, padding: '56px', border: '1px solid rgba(0,0,0,0.06)' }}
+          {/* Right: Domain Expertise Stats */}
+          <motion.div 
+            initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
+            style={{ background: 'var(--bg-surface)', border: '1px solid var(--border)', borderRadius: 32, padding: 48, alignSelf: 'start' }}
           >
-            <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: 32, color: '#080808', marginBottom: 40 }}>Domain Expertise</h3>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '24px 60px' }}>
+            <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: 32, color: 'var(--text-primary)', marginBottom: 40 }}>Domain Expertise</h3>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(1, 1fr)', gap: 32 }}>
               {[
                 { label: 'Frontend Development', level: 90, description: 'React Native (CLI), HTML5, CSS3' },
                 { label: 'Backend Engineering', level: 92, description: 'Python, Django, Django REST Framework' },
@@ -101,25 +87,23 @@ export default function Skills() {
               ].map((item, i) => (
                 <div key={item.label}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
-                    <div>
-                      <span style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 15, color: '#080808' }}>{item.label}</span>
-                      <span style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#aaa', marginLeft: 10 }}>{item.description}</span>
-                    </div>
-                    <span style={{ fontFamily: 'var(--font-code)', fontSize: 14, color: '#5b5cf6', fontWeight: 600 }}>{item.level}%</span>
+                    <div style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 16, color: 'var(--text-primary)' }}>{item.label}</div>
+                    <div style={{ fontFamily: 'var(--font-code)', fontSize: 13, color: 'var(--accent-light)', fontWeight: 600 }}>{item.level}%</div>
                   </div>
-                  <div style={{ height: 6, background: 'rgba(0,0,0,0.07)', borderRadius: 99, overflow: 'hidden' }}>
+                  <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: 'var(--text-muted)', marginBottom: 12 }}>{item.description}</div>
+                  <div style={{ height: 6, background: 'var(--bg-elevated)', borderRadius: 99, overflow: 'hidden', border: '1px solid var(--border)' }}>
                     <motion.div
-                      initial={{ width: 0 }} whileInView={{ width: `${item.level}%` }} viewport={{ once: true }}
-                      transition={{ duration: 1.2, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
-                      style={{ height: '100%', borderRadius: 99, background: 'linear-gradient(90deg, #5b5cf6, #a78bfa)' }}
+                      initial={{ width: 0 }} whileInView={{ width: `${item.level}%` }} viewport={{ once: true }} transition={{ duration: 1, delay: i * 0.1 }}
+                      style={{ height: '100%', background: 'linear-gradient(90deg, var(--accent), var(--purple))', borderRadius: 99, boxShadow: '0 0 10px var(--accent)' }}
                     />
                   </div>
                 </div>
               ))}
             </div>
           </motion.div>
+          
         </div>
-      </section>
+      </div>
     </div>
   )
 }

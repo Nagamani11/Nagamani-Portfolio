@@ -1,92 +1,70 @@
-import { motion } from 'framer-motion'
-import ExperienceCard from '../components/ExperienceCard'
 import SectionHeading from '../components/SectionHeading'
+import ExperienceCard from '../components/ExperienceCard'
+
+const experiences = [
+  {
+    company: 'AutoBrez',
+    role: 'Full Stack Developer',
+    period: 'Mar 2024 - Present',
+    location: 'Hyderabad',
+    current: true,
+    description: [
+      'Spearheading the development of production-grade digital platforms including the AutoBrez motors and curtain blinds website.',
+      'Architecting and building a comprehensive Trekking & Fitness application featuring live activity tracking, workout logging, and dynamic route management.',
+      'Implementing secure PostgreSQL databases and optimizing Django backend performance to handle large datasets.',
+      'Collaborating directly with stakeholders to translate business requirements into technical solutions while ensuring strict adherence to performance metrics.'
+    ],
+    technologies: ['React Native', 'Django', 'PostgreSQL', 'Python', 'REST API']
+  },
+  {
+    company: 'HiFix Innovatives',
+    role: 'Full Stack Developer',
+    period: 'Oct 2022 - Feb 2024',
+    location: 'Hyderabad',
+    description: [
+      'Developed and successfully launched multiple enterprise applications including HiFix Customer App, HiFix Experts App, and Jawar Community App on the Google Play Store.',
+      'Engineered robust backend systems using Django REST Framework and PostgreSQL, supporting thousands of concurrent real-time transactions.',
+      'Integrated complex third-party services including Razorpay for secure payments, AWS SNS for OTP authentication, and Google Maps API for live service tracking.',
+      'Designed and developed the HiFix Innovatives marketing website with React, optimizing for SEO and user conversion.'
+    ],
+    technologies: ['React Native (CLI)', 'Django', 'React.js', 'Razorpay', 'AWS SNS', 'Google Maps API']
+  }
+]
 
 export default function Experience() {
   return (
-    <div style={{ background: '#fff', paddingTop: 80 }}>
-      <section style={{ padding: '80px 40px 120px' }}>
-        <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-          <SectionHeading
-            label="Career"
-            title={"Professional<br /><em>Experience</em>"}
-            subtitle="My professional journey and the impactful work I've delivered across roles."
-          />
+    <div style={{ paddingTop: 100, paddingBottom: 100, background: 'var(--bg)' }}>
+      <div style={{ maxWidth: 1000, margin: '0 auto', padding: '0 40px' }}>
+        <SectionHeading label="Experience" title={"Professional<br /><em>Journey</em>"} subtitle="Building scalable applications and leading development across full-stack ecosystems." center />
+        
+        <div style={{ position: 'relative', marginTop: 60 }}>
+          {/* Vertical Timeline Line */}
+          <div style={{
+            position: 'absolute', top: 0, bottom: 0, left: 40, width: 2,
+            background: 'linear-gradient(to bottom, var(--accent) 0%, rgba(99,102,241,0.1) 100%)',
+            zIndex: 0
+          }} />
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
-            <ExperienceCard
-              company="AutoBrez"
-              role="Full Stack Developer"
-              period="May 2026 – Present"
-              location="Hyderabad, Telangana, India"
-              current={true}
-              description={[
-                "Developing and maintaining the AutoBrez company website, ensuring responsive design and optimal performance across devices.",
-                "Developing a Trekking & Fitness application featuring activity tracking, workout logging, step counting, and personalized fitness goal management using React Native and Django.",
-                "Implementing clean, scalable RESTful APIs using Django REST Framework, with PostgreSQL as the primary data store.",
-              ]}
-              technologies={['React Native', 'Django', 'Django REST Framework', 'PostgreSQL', 'React.js', 'HTML5', 'CSS3']}
-              delay={0}
-            />
-
-            <ExperienceCard
-              company="HiFix Innovatives"
-              role="Full Stack Developer"
-              period="2024 – February 2025"
-              location="Hyderabad, Telangana, India"
-              description={[
-                "Contributed to the complete software lifecycle of multiple live applications under the HiFix brand web platforms and Android apps.",
-                "Architected and developed 3 Android apps published live on Google Play Store: HiFix Partner, HiFix Experts, and Jawar.",
-                "Built 2 live production websites: hifix.in (service marketplace) and rotiwala.org (food delivery platform).",
-                "Integrated Stripe/Razorpay payment gateways, Google Maps service tracking, OTP authentication via AWS SNS, and Firebase push notifications.",
-                "Developed full-featured Django REST API backends with role-based access control for customer, expert, and admin portals.",
-                "Maintained code quality using PyLint and ESLint; managed source control and CI workflows on GitHub.",
-              ]}
-              technologies={['React Native', 'Django', 'Django REST Framework', 'PostgreSQL', 'MySQL', 'Razorpay', 'Stripe', 'Google Maps API', 'Firebase', 'AWS SNS', 'PyLint', 'ESLint', 'GitHub']}
-              delay={0.1}
-            />
-
-            <ExperienceCard
-              company="BIST Technologies Pvt. Ltd."
-              role="AI Intern"
-              period="2024"
-              location="Vijayawada, India"
-              description={[
-                "Completed Certification in Artificial Intelligence training program.",
-                "Gained hands-on experience with AI/ML concepts and practical implementations.",
-                "Worked on real-world AI projects during internship period.",
-              ]}
-              technologies={['Python', 'Machine Learning', 'AI', 'Data Science']}
-              delay={0.2}
-            />
-          </div>
-
-          {/* Skills summary */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
-            style={{ marginTop: 60, background: 'linear-gradient(135deg, #fafafa 0%, #f0f0ff 100%)', borderRadius: 24, padding: '48px', border: '1px solid rgba(91,92,246,0.1)' }}
-          >
-            <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: 28, color: '#080808', margin: '0 0 24px' }}>Core Competencies</h3>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
-              {[
-                { title: 'Frontend Architecture', items: ['Component Design Systems', 'State Management (Context, Redux)', 'Performance Optimization', 'Responsive Design'] },
-                { title: 'Backend Engineering', items: ['RESTful API Design', 'Database Schema Design', 'Authentication & Authorization', 'Third-party Integrations'] },
-                { title: 'Mobile Development', items: ['React Native (iOS/Android)', 'Play Store Deployment', 'Push Notifications', 'Offline-first Architecture'] },
-              ].map(section => (
-                <div key={section.title}>
-                  <div style={{ fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 14, color: '#5b5cf6', marginBottom: 14, textTransform: 'uppercase', letterSpacing: '0.06em' }}>{section.title}</div>
-                  {section.items.map(item => (
-                    <div key={item} style={{ display: 'flex', gap: 8, alignItems: 'center', marginBottom: 10 }}>
-                      <span style={{ width: 5, height: 5, borderRadius: '50%', background: '#5b5cf6', flexShrink: 0 }} />
-                      <span style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#555' }}>{item}</span>
-                    </div>
-                  ))}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 60, position: 'relative', zIndex: 1 }}>
+            {experiences.map((exp, i) => (
+              <div key={exp.company} style={{ display: 'flex', gap: 40 }}>
+                {/* Timeline dot */}
+                <div style={{
+                  width: 24, height: 24, borderRadius: '50%', background: 'var(--bg-surface)',
+                  border: `4px solid ${exp.current ? 'var(--green)' : 'var(--accent)'}`,
+                  boxShadow: `0 0 16px ${exp.current ? 'var(--green)' : 'var(--accent)'}`,
+                  marginTop: 36, flexShrink: 0, position: 'relative', left: 29
+                }} />
+                
+                {/* Content */}
+                <div style={{ flexGrow: 1 }}>
+                  <ExperienceCard {...exp} delay={i * 0.2} />
                 </div>
-              ))}
-            </div>
-          </motion.div>
+              </div>
+            ))}
+          </div>
         </div>
-      </section>
+      </div>
     </div>
   )
 }

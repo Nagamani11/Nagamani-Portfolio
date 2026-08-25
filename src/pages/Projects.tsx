@@ -327,7 +327,7 @@ export default function Projects() {
   const websiteCount = projects.filter(p => p.linkType === 'website').length
 
   return (
-    <div style={{ background: '#fff', paddingTop: 80 }}>
+    <div style={{ background: 'var(--bg)', paddingTop: 100, paddingBottom: 100 }}>
       {/* ── Hero ── */}
       <section style={{ padding: '80px 40px 48px', position: 'relative', overflow: 'hidden' }}>
         <div style={{
@@ -347,8 +347,8 @@ export default function Projects() {
           <motion.div
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }}
             style={{
-              display: 'inline-flex', gap: 0, background: '#fafafa',
-              border: '1px solid rgba(0,0,0,0.07)', borderRadius: 16, overflow: 'hidden', marginBottom: 48,
+              display: 'inline-flex', gap: 0, background: 'var(--bg-surface)',
+              border: '1px solid var(--border)', borderRadius: 16, overflow: 'hidden', marginBottom: 48,
             }}
           >
             {[
@@ -359,10 +359,10 @@ export default function Projects() {
             ].map((s, i) => (
               <div key={s.label} style={{
                 padding: '16px 28px', textAlign: 'center',
-                borderRight: i < 3 ? '1px solid rgba(0,0,0,0.07)' : 'none',
+                borderRight: i < 3 ? '1px solid var(--border)' : 'none',
               }}>
-                <div style={{ fontFamily: 'var(--font-heading)', fontSize: 28, color: '#080808', lineHeight: 1 }}>{s.value}</div>
-                <div style={{ fontFamily: 'var(--font-body)', fontSize: 11, color: '#aaa', marginTop: 4, textTransform: 'uppercase', letterSpacing: '0.07em' }}>{s.label}</div>
+                <div style={{ fontFamily: 'var(--font-heading)', fontSize: 28, color: 'var(--text-primary)', lineHeight: 1 }}>{s.value}</div>
+                <div style={{ fontFamily: 'var(--font-body)', fontSize: 11, color: 'var(--text-muted)', marginTop: 4, textTransform: 'uppercase', letterSpacing: '0.07em' }}>{s.label}</div>
               </div>
             ))}
           </motion.div>
@@ -380,9 +380,10 @@ export default function Projects() {
                   fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: 13,
                   padding: '9px 22px', borderRadius: 99, border: 'none', cursor: 'pointer',
                   transition: 'all 0.2s ease',
-                  background: active === cat ? '#080808' : 'rgba(0,0,0,0.05)',
-                  color: active === cat ? '#fff' : '#737373',
-                  boxShadow: active === cat ? '0 4px 16px rgba(0,0,0,0.15)' : 'none',
+                  background: active === cat ? 'var(--accent)' : 'var(--bg-surface)',
+                  color: active === cat ? '#fff' : 'var(--text-secondary)',
+                  boxShadow: active === cat ? 'var(--glow-accent)' : 'none',
+                  border: active === cat ? 'none' : '1px solid var(--border)',
                 }}
               >
                 {cat}
@@ -460,25 +461,25 @@ export default function Projects() {
                   whileHover={{ y: -4 }}
                   style={{
                     textDecoration: 'none', display: 'block',
-                    background: '#fafafa', border: '1px solid rgba(0,0,0,0.07)',
+                    background: 'var(--bg-surface)', border: '1px solid var(--border)',
                     borderRadius: 20, padding: '28px', transition: 'all 0.3s ease',
                   }}
                   onMouseEnter={e => {
-                    (e.currentTarget as HTMLElement).style.boxShadow = `0 16px 48px rgba(0,0,0,0.1)`
-                    ;(e.currentTarget as HTMLElement).style.borderColor = `${site.color}30`
+                    (e.currentTarget as HTMLElement).style.boxShadow = `0 16px 48px rgba(0,0,0,0.5)`
+                    ;(e.currentTarget as HTMLElement).style.borderColor = `${site.color}50`
                   }}
                   onMouseLeave={e => {
                     (e.currentTarget as HTMLElement).style.boxShadow = 'none'
-                    ;(e.currentTarget as HTMLElement).style.borderColor = 'rgba(0,0,0,0.07)'
+                    ;(e.currentTarget as HTMLElement).style.borderColor = 'var(--border)'
                   }}
                 >
                   <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 12 }}>
                     <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#22c55e', boxShadow: '0 0 6px #22c55e' }} />
                     <span style={{ fontFamily: 'var(--font-body)', fontSize: 12, fontWeight: 700, color: '#22c55e', letterSpacing: '0.05em' }}>LIVE</span>
                   </div>
-                  <div style={{ fontFamily: 'var(--font-heading)', fontSize: 22, color: '#080808', marginBottom: 4 }}>{site.label}</div>
+                  <div style={{ fontFamily: 'var(--font-heading)', fontSize: 22, color: 'var(--text-primary)', marginBottom: 4 }}>{site.label}</div>
                   <div style={{ fontFamily: 'var(--font-code)', fontSize: 12, color: site.color, marginBottom: 12 }}>{site.name}</div>
-                  <p style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#737373', lineHeight: 1.65, margin: '0 0 20px' }}>{site.desc}</p>
+                  <p style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: 'var(--text-secondary)', lineHeight: 1.65, margin: '0 0 20px' }}>{site.desc}</p>
                   <div style={{
                     display: 'inline-flex', alignItems: 'center', gap: 6,
                     fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 700,

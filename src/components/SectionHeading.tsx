@@ -18,12 +18,23 @@ export default function SectionHeading({ label, title, subtitle, center = false 
           transition={{ duration: 0.5 }}
           style={{
             display: 'inline-flex', alignItems: 'center', gap: 8,
-            background: 'rgba(91,92,246,0.08)', border: '1px solid rgba(91,92,246,0.15)',
-            borderRadius: 99, padding: '5px 14px', marginBottom: 20,
+            background: 'rgba(99,102,241,0.1)',
+            border: '1px solid rgba(99,102,241,0.25)',
+            borderRadius: 99, padding: '5px 16px', marginBottom: 20,
           }}
         >
-          <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#5b5cf6', flexShrink: 0 }} />
-          <span style={{ fontFamily: 'var(--font-body)', fontSize: 12, fontWeight: 600, color: '#5b5cf6', letterSpacing: '0.08em', textTransform: 'uppercase' }}>{label}</span>
+          <span style={{
+            width: 6, height: 6, borderRadius: '50%',
+            background: 'var(--accent)',
+            boxShadow: '0 0 8px var(--accent)',
+            flexShrink: 0,
+          }} />
+          <span style={{
+            fontFamily: 'var(--font-body)', fontSize: 11, fontWeight: 700,
+            color: 'var(--accent-light)', letterSpacing: '0.1em', textTransform: 'uppercase',
+          }}>
+            {label}
+          </span>
         </motion.div>
       )}
       <motion.h2
@@ -32,8 +43,13 @@ export default function SectionHeading({ label, title, subtitle, center = false 
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.1 }}
         style={{
-          fontFamily: 'var(--font-heading)', fontSize: 'clamp(36px, 5vw, 58px)',
-          color: '#080808', margin: 0, lineHeight: 1.1, letterSpacing: '-0.025em',
+          fontFamily: 'var(--font-heading)',
+          fontSize: 'clamp(36px, 5vw, 58px)',
+          margin: 0, lineHeight: 1.1, letterSpacing: '-0.025em',
+          background: 'linear-gradient(135deg, #f1f5f9 0%, #a78bfa 55%, #6366f1 100%)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          backgroundClip: 'text',
         }}
         dangerouslySetInnerHTML={{ __html: title }}
       />
@@ -44,8 +60,10 @@ export default function SectionHeading({ label, title, subtitle, center = false 
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
           style={{
-            fontFamily: 'var(--font-body)', fontSize: 17, color: '#737373',
-            lineHeight: 1.7, maxWidth: center ? 560 : 600,
+            fontFamily: 'var(--font-body)', fontSize: 17,
+            color: 'var(--text-secondary)',
+            lineHeight: 1.7,
+            maxWidth: center ? 560 : 600,
             margin: center ? '20px auto 0' : '20px 0 0',
           }}
         >

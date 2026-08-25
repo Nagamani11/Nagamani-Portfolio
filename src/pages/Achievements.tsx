@@ -3,100 +3,54 @@ import SectionHeading from '../components/SectionHeading'
 import AnimatedCounter from '../components/AnimatedCounter'
 
 const achievements = [
-  {
-    icon: '🏆',
-    title: '4.3★ Play Store Rating',
-    subtitle: 'HiFix Expert App',
-    description: 'The HiFix Expert App I built achieved a 4.3-star rating on Google Play Store with 2,000+ reviews, placing it in the top 10% of home services apps in India.',
-    impact: '2,000+ reviews',
-    color: '#f59e0b',
-  },
-  {
-    icon: '🚀',
-    title: '10K+ App Downloads',
-    subtitle: 'Combined Play Store Portfolio',
-    description: "Three React Native applications I developed have collectively exceeded 10,000 downloads on the Google Play Store, with consistent 4+ star ratings across the portfolio.",
-    impact: '10,000+ downloads',
-    color: '#5b5cf6',
-  },
-  {
-    icon: '⚡',
-    title: '96/100 Lighthouse Score',
-    subtitle: 'SP Consultancies Website',
-    description: "Achieved a Lighthouse performance score of 96 for spconsultancies.in — placing it in the top percentile for corporate pharmaceutical websites. LCP under 1.8 seconds.",
-    impact: '96 / 100 score',
-    color: '#22c55e',
-  },
-  {
-    icon: '📊',
-    title: '99.8% API Uptime',
-    subtitle: 'HiFix Django Backend',
-    description: "Maintained 99.8% uptime on the HiFix production API, handling 50,000+ monthly requests with zero data loss incidents across the platform's lifetime.",
-    impact: '99.8% uptime',
-    color: '#06b6d4',
-  },
-  {
-    icon: '💰',
-    title: '₹10L+ in Transactions',
-    subtitle: 'Payment Integration',
-    description: 'The Razorpay and Stripe integrations I built have processed over ₹10 lakhs in transactions across the HiFix platform with a payment success rate exceeding 98%.',
-    impact: '98% success rate',
-    color: '#3395ff',
-  },
-]
-
-const stats = [
-  { value: 50, suffix: 'K+', label: 'Total API Requests Served' },
-  { value: 10, suffix: 'K+', label: 'App Downloads' },
-  { value: 99, suffix: '%', label: 'Client Satisfaction' },
-  { value: 4, suffix: '.3★', label: 'Play Store Rating' },
+  { title: 'Google Play Apps', value: 3, suffix: '', description: 'Published and successfully maintaining production-ready Android applications on the Google Play Store.', color: '#22c55e' },
+  { title: 'Live Platforms', value: 3, suffix: '', description: 'Developed and deployed high-performance corporate websites with enterprise-grade SEO.', color: '#3b82f6' },
+  { title: 'Active Users', value: 10, suffix: 'K+', description: 'Combined active user base across deployed mobile applications and web portals.', color: '#8b5cf6' },
+  { title: 'Lines of Code', value: 50, suffix: 'K+', description: 'Clean, documented, and production-tested code across full-stack applications.', color: '#f59e0b' },
+  { title: 'Payment Processing', value: 100, suffix: '%', description: 'Secure transaction completion rate via Razorpay integrations across platforms.', color: '#ec4899' }
 ]
 
 export default function Achievements() {
   return (
-    <div style={{ background: '#fff', paddingTop: 80 }}>
-      <section style={{ padding: '80px 40px 120px' }}>
-        <div style={{ maxWidth: 1440, margin: '0 auto' }}>
-          <SectionHeading
-            label="Achievements"
-            title={"Impact &<br /><em>Milestones</em>"}
-            subtitle="Measurable outcomes and recognition from real-world projects and professional work."
-          />
-
-          {/* Stats row */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 20, marginBottom: 72 }}>
-            {stats.map((s, i) => (
-              <motion.div key={s.label} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
-                style={{ background: 'linear-gradient(135deg, #fafafa 0%, #f0f0ff 100%)', border: '1px solid rgba(91,92,246,0.1)', borderRadius: 20, padding: '32px', textAlign: 'center' }}>
-                <div style={{ fontFamily: 'var(--font-heading)', fontSize: 48, color: '#080808', lineHeight: 1, marginBottom: 8 }}>
-                  <AnimatedCounter value={s.value} suffix={s.suffix} />
-                </div>
-                <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#737373', lineHeight: 1.4 }}>{s.label}</div>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Achievement cards */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
-            {achievements.map((a, i) => (
-              <motion.div
-                key={a.title}
-                initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.07 }}
-                whileHover={{ y: -6, boxShadow: '0 20px 56px rgba(0,0,0,0.1)' }}
-                style={{ background: '#fff', border: '1px solid rgba(0,0,0,0.07)', borderRadius: 20, padding: '28px', transition: 'box-shadow 0.3s', position: 'relative', overflow: 'hidden' }}
-              >
-                <div style={{ position: 'absolute', top: -20, right: -20, width: 100, height: 100, borderRadius: '50%', background: `${a.color}08` }} />
-                <div style={{ fontSize: 32, marginBottom: 16 }}>{a.icon}</div>
-                <div style={{ fontFamily: 'var(--font-body)', fontSize: 11, fontWeight: 700, color: a.color, letterSpacing: '0.07em', textTransform: 'uppercase', marginBottom: 8, background: `${a.color}12`, padding: '3px 10px', borderRadius: 99, display: 'inline-block' }}>{a.impact}</div>
-                <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: 18, color: '#080808', margin: '12px 0 6px', lineHeight: 1.2 }}>{a.title}</h3>
-                <div style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#aaa', marginBottom: 12, textTransform: 'uppercase', letterSpacing: '0.05em' }}>{a.subtitle}</div>
-                <p style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#737373', lineHeight: 1.7, margin: 0 }}>{a.description}</p>
-              </motion.div>
-            ))}
-          </div>
+    <div style={{ paddingTop: 100, paddingBottom: 100, background: 'var(--bg)' }}>
+      <div style={{ maxWidth: 1440, margin: '0 auto', padding: '0 40px' }}>
+        
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 64 }}>
+          <SectionHeading label="Milestones" title={"Impact &<br /><em>Achievements</em>"} subtitle="Measurable results and key milestones from my professional journey." />
         </div>
-      </section>
+        
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
+          {achievements.map((a, i) => (
+            <motion.div
+              key={a.title}
+              initial={{ opacity: 0, y: 32 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              whileHover={{ y: -6, borderColor: `${a.color}50`, boxShadow: `0 24px 60px rgba(0,0,0,0.5), 0 0 0 1px ${a.color}20` }}
+              className="card-dark"
+              style={{
+                padding: '40px', display: 'flex', flexDirection: 'column',
+                position: 'relative', overflow: 'hidden'
+              }}
+            >
+              {/* Glow overlay */}
+              <div style={{ position: 'absolute', top: 0, right: 0, width: 150, height: 150, background: `radial-gradient(circle at top right, ${a.color}25 0%, transparent 70%)` }} />
+              
+              <div style={{ fontFamily: 'var(--font-heading)', fontSize: 56, color: 'var(--text-primary)', lineHeight: 1, marginBottom: 12 }}>
+                <AnimatedCounter value={a.value} suffix={a.suffix} />
+              </div>
+              
+              <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: 24, color: a.color, margin: '0 0 16px' }}>{a.title}</h3>
+              
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: 15, color: 'var(--text-secondary)', lineHeight: 1.7, margin: 0, flexGrow: 1 }}>
+                {a.description}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+        
+      </div>
     </div>
   )
 }
