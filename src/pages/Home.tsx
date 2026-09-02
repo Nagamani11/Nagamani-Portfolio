@@ -6,7 +6,9 @@ import FloatingBackground from '../components/FloatingBackground'
 import ProjectCard from '../components/ProjectCard'
 import SectionHeading from '../components/SectionHeading'
 import TechnologyCard from '../components/TechnologyCard'
-import developerImage from '../assets/Developer.png'
+// Use a runtime public URL so deployed sites (GitHub Pages / static hosts)
+// reliably serve the image from `public/assets/Developer.png`.
+const developerImage = `${import.meta.env.BASE_URL}assets/Developer.png`
 
 const stats = [
   { value: 2, suffix: '+', label: 'Years Experience' },
